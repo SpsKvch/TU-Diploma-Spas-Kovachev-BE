@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/diploma
+      database: diploma
+      auto-index-creation: true
+endpoints:
+  publicEndpoints:
+    - /v1/users/login
+    - /v1/users/register
+    - /swagger-ui/**
+    - /v3/api-docs/**
+    - /error/**
+    - /v1/auth
+  protectedGetEndpoints:
+    - /v1/users/.*/templates/drafts
+    - /v1/templates/drafts/.*
+    - /v1/users/friends/requests/.*
+    - /v1/users/.*/templates/journal
+    - /v1/users/friends
